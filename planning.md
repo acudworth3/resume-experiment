@@ -20,6 +20,7 @@
 ### Resume
 
 - [ ] Task -> 🗒️ figure out website display/removal
+- [ ] Task -> 🗒️ in general need to adjust for multi line issues
 
 ### Files Parsing
 
