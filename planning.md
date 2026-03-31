@@ -9,12 +9,17 @@
 - [ ] Read -> 📖 watch video again https://www.youtube.com/watch?v=S2gpOr-mbf4
 
 - [ ] Task -> 🗒️ update yamls with you info
-- [ ] Task -> 🗒️ run it locally
+- [ ] Task -> 🗒️ extend the make file
+- [x] Task -> 🗒️ run it locally
 
 - [ ] Task -> 🗒️ clean up and make it public
 
-- [ ] Task -> 🗒️ update github action to use a release branch?
+- [x] Task -> 🗒️ ~update github action to use a release branch?~
 - [ ] Task -> 🗒️ Extend to Consultant?
+
+### Resume
+
+- [ ] Task -> 🗒️ figure out website display/removal
 
 ### Files Parsing
 
@@ -24,3 +29,6 @@
 ## AI Integration
 
 - [ ] Task -> 🗒️ develop strategy
+- [ ] Task -> 🗒️ fix github cli issue
+
+# Completed
