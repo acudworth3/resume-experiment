@@ -33,6 +33,22 @@ def get_pdf_text(pdf_path: Path) -> str:
         print(f"Error extracting text from {pdf_path}: {e}")
         return ""
 
+def get_pdf_page_count(pdf_path: Path) -> int:
+    """Get the number of pages in a PDF using pdfinfo."""
+    try:
+        result = subprocess.run(
+            ['pdfinfo', str(pdf_path)],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        for line in result.stdout.split('\n'):
+            if line.startswith('Pages:'):
+                return int(line.split(':')[1].strip())
+    except (subprocess.CalledProcessError, ValueError, IndexError) as e:
+        print(f"Error getting page count from {pdf_path}: {e}")
+    return -1
+
 def normalize_text(text: str) -> str:
     """Normalize text for comparison (lowercase, remove extra whitespace, normalize quotes and ligatures).
 
@@ -194,8 +210,8 @@ def check_strengths(data: Dict, pdf_text: str, variant: str) -> List[str]:
 
     return issues
 
-def test_variant(variant: str, data_dir: Path, output_dir: Path) -> bool:
-    """Test a single CV variant."""
+def test_variant(variant: str, data_dir: Path, output_dir: Path) -> tuple:
+    """Test a single CV variant. Returns (passed: bool, warnings: list)."""
     print(f"\n{'='*60}")
     print(f"Testing variant: {variant}")
     print(f"{'='*60}")
@@ -207,16 +223,22 @@ def test_variant(variant: str, data_dir: Path, output_dir: Path) -> bool:
     pdf_path = output_dir / f"{variant}.pdf"
     if not pdf_path.exists():
         print(f"❌ PDF not found: {pdf_path}")
-        return False
+        return False, []
 
     # Extract PDF text
     pdf_text = get_pdf_text(pdf_path)
     if not pdf_text:
         print(f"❌ Could not extract text from PDF")
-        return False
+        return False, []
 
     # Run all checks
     all_issues = []
+    warnings = []
+
+    # Check page count
+    page_count = get_pdf_page_count(pdf_path)
+    if page_count > 1:
+        warnings.append(f"⚠️  PDF has {page_count} pages (expected 1-page layout)")
 
     print("\n📋 Checking personal information...")
     issues = check_personal_info(data, pdf_text, variant)
@@ -274,12 +296,15 @@ def test_variant(variant: str, data_dir: Path, output_dir: Path) -> bool:
 
     # Summary
     print(f"\n{'='*60}")
+    if warnings:
+        for warning in warnings:
+            print(warning)
     if all_issues:
         print(f"❌ FAILED: {len(all_issues)} issues found")
-        return False
+        return False, warnings
     else:
         print(f"✅ PASSED: All data present in {variant} PDF")
-        return True
+        return True, warnings
 
 def main():
     """Main test runner."""
@@ -303,8 +328,11 @@ def main():
     print(f"Output directory: {output_dir}")
 
     results = {}
+    all_warnings = {}
     for variant in variants:
-        results[variant] = test_variant(variant, data_dir, output_dir)
+        passed, warnings = test_variant(variant, data_dir, output_dir)
+        results[variant] = passed
+        all_warnings[variant] = warnings
 
     # Final summary
     print("\n" + "="*60)
@@ -315,6 +343,9 @@ def main():
     for variant, passed in results.items():
         status = "✅ PASSED" if passed else "❌ FAILED"
         print(f"{variant:25} {status}")
+        if all_warnings[variant]:
+            for warning in all_warnings[variant]:
+                print(f"  {warning}")
 
     print("="*60)
 

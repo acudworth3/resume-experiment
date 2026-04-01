@@ -67,6 +67,7 @@ pdfinfo your_cv.pdf | grep "Pages:" | awk '{print $2}'
 
 - [ ] Task -> 🗒️ develop strategy
 - [x] Task -> 🗒️ fix github cli issue
+- [ ] Task -> 🗒️ fix atuin
 
 ## Issues + Updates
 
