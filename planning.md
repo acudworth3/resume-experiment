@@ -11,6 +11,8 @@
 - [x] Task -> 🗒️ ~update github action to use a release branch?~
 - [x] Task -> 🗒️ ATS isn't being generated?
 
+- [ ] Task -> 🗒️ setup treesitter for LaTeX
+
 ### New Tools
 
 #### LaTeX
@@ -56,15 +58,15 @@ pdfinfo your_cv.pdf | grep "Pages:" | awk '{print $2}'
 - [x] Read -> 📖 test_data_completeness.py
 - [x] Read -> 📖 generate_ats.py
 - [x] Read -> 📖 read the scripts
+- [x] Read -> 📖 cv-build.yml
 
 - [ ] Learn -> ❔ understand the tempaltes
-- [ ] Read -> 📖 cv-build.yml
 - [ ] Read -> 📖 https://github.com/acudworth3/resume-experiment/blob/main/docs/CONTENT_GUIDE.md
 
 ## AI Integration
 
 - [ ] Task -> 🗒️ develop strategy
-- [ ] Task -> 🗒️ fix github cli issue
+- [x] Task -> 🗒️ fix github cli issue
 
 ## Issues + Updates
 
