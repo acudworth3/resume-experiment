@@ -1,31 +1,15 @@
-- name: "AWS SAA"
-  full_name: "AWS Certified Solutions Architect - Associate"
-  tags: ["cloud"]
-
-- name: "AWS Developer"
-  full_name: "AWS Certified Developer - Associate"
-  tags: ["development", "cloud"]
+- name: "Azure DevOps Expert"
+  full_name: "Microsoft Certified: Azure Fundamentals"
+  tags: ["devops", "cloud", "development"]
 
 - name: "Azure Fundamentals"
   full_name: "Microsoft Certified: Azure Fundamentals"
-  tags: ["cloud"]
+  tags: ["devops", "cloud", "development"]
 
-- name: "GCP ACE"
-  full_name: "Google Cloud Certified - Associate Cloud Engineer"
-  tags: ["cloud"]
+- name: "Azure Developer"
+  full_name: "Microsoft Certified: Azure Fundamentals"
+  tags: ["devops", "cloud", "development"]
 
-- name: "Terraform Associate"
-  full_name: "HashiCorp Certified: Terraform Associate"
-  tags: ["devops", "cloud"]
-
-- name: "Docker Certified"
-  full_name: "Docker Certified Associate"
-  tags: ["devops"]
-
-- name: "PMP"
-  full_name: "Project Management Professional"
-  tags: ["development", "devops"]
-
-- name: "Scrum Master"
-  full_name: "Certified ScrumMaster (CSM)"
-  tags: ["development"]
+- name: "Plower Platform Fundamentals"
+  full_name: "Microsoft Certified: Azure Fundamentals"
+  tags: ["devops", "cloud", "development"]
