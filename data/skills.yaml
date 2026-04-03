@@ -17,8 +17,34 @@ DevOps and Cloud Technologies:
   - "Docker"
   - "Terraform"
   - "GitHub Actions"
-  - "GitHub Actions"
+  - "Data Dog"
+  - "Splunk"
+  - "Sonar Cloud"
 
 Cloud Platforms:
   - "AWS"
   - "Azure"
+
+Back End:
+  - "Postgres SQL"
+  - "Active Directory"
+  - "K6 Performance Testing"
+  - "Rest API Design"
+  - "Linux Configuration"
+  - "Shell Scripting"
+  - ".NET Core"
+  - "Git"
+  - "Neovim"
+  - "vim"
+  - "ed"
+  - "bash"
+
+Front End:
+  - "React"
+  - "Reach Query"
+  - "Material UI"
+  - "Figma"
+  - "Figma Make"
+  - "Webpack"
+  - "ESlint"
+  - "OPenAPI"

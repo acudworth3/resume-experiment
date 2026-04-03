@@ -37,7 +37,7 @@ pdfinfo your_cv.pdf | grep "Pages:" | awk '{print $2}'
 - [x] Task -> 🗒️ figure out website display/removal
 - [x] Task -> 🗒️ in general need to adjust for multi line issues
 - [x] Task -> 🗒️ update certifications.yaml
-- [ ] Task -> 🗒️ update skills.yaml
+- [x] Task -> 🗒️ update skills.yaml
 
 - [ ] Task -> 🗒️ update experience.yaml
 - [ ] Task -> 🗒️ update strength.yaml

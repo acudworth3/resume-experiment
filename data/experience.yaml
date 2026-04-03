@@ -32,10 +32,15 @@
   tags: ["devops", "cloud", "development"]
   achievements:
     - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
-    - "Pellentesque egestas a eros at tempus."
-    - "Fusce vel facilisis diam, ut efficitur erat."
-    - "Etiam nec rhoncus lorem."
-    - "Ut tristique felis id neque fermentum, vel euismod nunc porta."
+
+- title: "Graduate Teaching Assistant"
+  company: "Georgia Tech College of Computing"
+  location: "Remote"
+  start_date: "01/2019"
+  end_date: "05/2022"
+  tags: ["devops", "cloud", "development"]
+  achievements:
+    - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
 
 - title: "Associate Product Manager"
   company: "Walmart E-Commerce"
@@ -45,29 +50,12 @@
   tags: ["devops", "cloud", "development"]
   achievements:
     - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
-    - "Pellentesque egestas a eros at tempus."
-    - "Fusce vel facilisis diam, ut efficitur erat."
-    - "Etiam nec rhoncus lorem."
-    - "Ut tristique felis id neque fermentum, vel euismod nunc porta."
 
 - title: "Software Consultant (Warehouse)"
   company: "Manhattan Associates"
   location: "Atlanta, GA"
   start_date: "08/2014"
   end_date: "12/2016"
-  tags: ["devops", "cloud", "development"]
-  achievements:
-    - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
-    - "Pellentesque egestas a eros at tempus."
-    - "Fusce vel facilisis diam, ut efficitur erat."
-    - "Etiam nec rhoncus lorem."
-    - "Ut tristique felis id neque fermentum, vel euismod nunc porta."
-
-- title: "Graduate Teaching Assistant"
-  company: "Georgia Tech College of Computing"
-  location: "Remote"
-  start_date: "01/2019"
-  end_date: "05/2022"
   tags: ["devops", "cloud", "development"]
   achievements:
     - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
