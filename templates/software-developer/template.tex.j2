@@ -83,14 +83,18 @@
 {% for job in experience[:6] -%}
 
 {% raw %}\cvevent{{% endraw %}{{ job.title | escape_latex }}{% raw %}}{{% endraw %}{{ job.company | escape_latex }}{% raw %}}{{% endraw %}{{ job.start_date }}--{{ job.end_date }}{% raw %}}{{% endraw %}{{ job.location | escape_latex }}{% raw %}}
-\begin{itemize}
+{% endraw %}
+{% if job.achievements -%}
+{% raw %}\begin{itemize}
 {% endraw %}
 {% for achievement in job.achievements[:3] -%}
 {% raw %}\item {% endraw %}{{ achievement | escape_latex }}
 {% endfor -%}
 {% raw %}\end{itemize}
 
-\divider
+{% endraw %}
+{% endif -%}
+{% raw %}\divider
 
 {% endraw %}
 {% endfor -%}

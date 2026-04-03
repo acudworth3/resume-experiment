@@ -149,10 +149,11 @@ def generate_software_developer(data: Dict[str, Any]) -> str:
     for job in experience:
         latex += f"\\cvevent{{{escape_latex(job['title'])}}}{{{escape_latex(job['company'])}}}"
         latex += f"{{{job['start_date']}--{job['end_date']}}}{{{escape_latex(job['location'])}}}\n"
-        latex += "\\begin{itemize}\n"
-        for achievement in job["achievements"]:
-            latex += f"\\item {escape_latex(achievement)}\n"
-        latex += "\\end{itemize}\n\n"
+        if job.get("achievements"):
+            latex += "\\begin{itemize}\n"
+            for achievement in job["achievements"]:
+                latex += f"\\item {escape_latex(achievement)}\n"
+            latex += "\\end{itemize}\n\n"
         latex += "\\divider\n\n"
 
     # Switch to sidebar
@@ -284,10 +285,11 @@ def generate_devops_engineer(data: Dict[str, Any]) -> str:
     for job in experience:
         latex += f"\\cvevent{{{escape_latex(job['title'])}}}{{{escape_latex(job['company'])}}}"
         latex += f"{{{job['start_date']}--{job['end_date']}}}{{{escape_latex(job['location'])}}}\n"
-        latex += "\\begin{itemize}\n"
-        for achievement in job["achievements"]:
-            latex += f"\\item {escape_latex(achievement)}\n"
-        latex += "\\end{itemize}\n\n"
+        if job.get("achievements"):
+            latex += "\\begin{itemize}\n"
+            for achievement in job["achievements"]:
+                latex += f"\\item {escape_latex(achievement)}\n"
+            latex += "\\end{itemize}\n\n"
         latex += "\\divider\n\n"
 
     latex += "\\switchcolumn\n\n"
@@ -417,10 +419,11 @@ def generate_cloud_engineer(data: Dict[str, Any]) -> str:
     for job in experience:
         latex += f"\\cvevent{{{escape_latex(job['title'])}}}{{{escape_latex(job['company'])}}}"
         latex += f"{{{job['start_date']}--{job['end_date']}}}{{{escape_latex(job['location'])}}}\n"
-        latex += "\\begin{itemize}\n"
-        for achievement in job["achievements"]:
-            latex += f"\\item {escape_latex(achievement)}\n"
-        latex += "\\end{itemize}\n\n"
+        if job.get("achievements"):
+            latex += "\\begin{itemize}\n"
+            for achievement in job["achievements"]:
+                latex += f"\\item {escape_latex(achievement)}\n"
+            latex += "\\end{itemize}\n\n"
         latex += "\\divider\n\n"
 
     latex += "\\switchcolumn\n\n"
