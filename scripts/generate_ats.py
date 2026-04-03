@@ -48,7 +48,8 @@ def generate_header(personal: Dict[str, Any], tagline_key: str) -> str:
     lines.append(f"Location: {personal['location']}")
     lines.append(f"LinkedIn: {personal['linkedin']}")
     lines.append(f"GitHub: {personal['github']}")
-    lines.append(f"Website: {personal['website']}")
+    if personal.get('website'):
+        lines.append(f"Website: {personal['website']}")
     lines.append("")
 
     return "\n".join(lines)

@@ -43,7 +43,7 @@ def load_yaml_data(data_dir: Path) -> Dict[str, Any]:
 
     # Validate required fields in personal.yaml
     personal = data['personal']
-    required_personal = ['first_name', 'last_name', 'email', 'phone', 'location', 'website', 'linkedin', 'github', 'taglines']
+    required_personal = ['first_name', 'last_name', 'email', 'phone', 'location', 'linkedin', 'github', 'taglines']
     missing_personal = [f for f in required_personal if f not in personal]
     if missing_personal:
         raise ValueError(f"Missing required fields in personal.yaml: {', '.join(missing_personal)}")
@@ -123,8 +123,9 @@ def generate_software_developer(data: Dict[str, Any]) -> str:
     latex += f"  \\phone{{{escape_latex(personal['phone'])}}}\n"
     latex += f"  \\location{{{escape_latex(personal['location'])}}}\n"
 
-    website = personal['website'].replace('https://', '').replace('http://', '')
-    latex += f"  \\homepage{{{escape_latex(website)}}}\n"
+    if personal.get('website'):
+        website = personal['website'].replace('https://', '').replace('http://', '')
+        latex += f"  \\homepage{{{escape_latex(website)}}}\n"
 
     linkedin_id = personal['linkedin'].replace('https://www.linkedin.com/in/', '').replace('https://linkedin.com/in/', '').replace('/', '')
     latex += f"  \\linkedin{{{escape_latex(linkedin_id)}}}\n"
@@ -263,8 +264,9 @@ def generate_devops_engineer(data: Dict[str, Any]) -> str:
     latex += f"  \\phone{{{escape_latex(personal['phone'])}}}\n"
     latex += f"  \\location{{{escape_latex(personal['location'])}}}\n"
 
-    website = personal['website'].replace('https://', '').replace('http://', '')
-    latex += f"  \\homepage{{{escape_latex(website)}}}\n"
+    if personal.get('website'):
+        website = personal['website'].replace('https://', '').replace('http://', '')
+        latex += f"  \\homepage{{{escape_latex(website)}}}\n"
 
     linkedin_id = personal['linkedin'].replace('https://www.linkedin.com/in/', '').replace('https://linkedin.com/in/', '').replace('/', '')
     latex += f"  \\linkedin{{{escape_latex(linkedin_id)}}}\n"
@@ -401,8 +403,9 @@ def generate_cloud_engineer(data: Dict[str, Any]) -> str:
     latex += f"  \\phone{{{escape_latex(personal['phone'])}}}\n"
     latex += f"  \\location{{{escape_latex(personal['location'])}}}\n"
 
-    website = personal['website'].replace('https://', '').replace('http://', '')
-    latex += f"  \\homepage{{{escape_latex(website)}}}\n"
+    if personal.get('website'):
+        website = personal['website'].replace('https://', '').replace('http://', '')
+        latex += f"  \\homepage{{{escape_latex(website)}}}\n"
 
     linkedin_id = personal['linkedin'].replace('https://www.linkedin.com/in/', '').replace('https://linkedin.com/in/', '').replace('/', '')
     latex += f"  \\linkedin{{{escape_latex(linkedin_id)}}}\n"
