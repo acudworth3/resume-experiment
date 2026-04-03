@@ -3,7 +3,7 @@
   location: "Miami Area, FL"
   start_date: "07/2025"
   end_date: "Present"
-  tags: ["devops", "cloud", "development"]
+  tags: ["devops", "cloud", development"]
   achievements:
     - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
     - "Pellentesque egestas a eros at tempus."

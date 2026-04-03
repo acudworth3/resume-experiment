@@ -3,26 +3,22 @@ Languages:
   - "Spanish (Business Fluent)"
   - "French (Conversational)"
 
+# TODO: add more sections and generate from keys generically
 Programming Languages:
-  - "Go"
   - "Python"
   - "JavaScript/TypeScript"
-  - "Rust"
-  - "Bash"
+  - "C#"
+  - "HTML"
+  - "CSS"
   - "SQL"
+  - "lua"
 
 DevOps and Cloud Technologies:
-  - "Kubernetes"
   - "Docker"
-  - "ArgoCD"
   - "Terraform"
-  - "Ansible"
   - "GitHub Actions"
-  - "Crossplane"
-  - "Prometheus"
-  - "Grafana"
+  - "GitHub Actions"
 
 Cloud Platforms:
   - "AWS"
-  - "GCP"
   - "Azure"

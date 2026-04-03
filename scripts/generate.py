@@ -434,6 +434,7 @@ def generate_cloud_engineer(data: Dict[str, Any]) -> str:
 
     # Technical Stack
     latex += "\\cvsection{Technical Stack}\n\n"
+    # TODO: generate these generically from keys?
     latex += "\\textbf{Languages}\n\n"
     for skill in skills['Programming Languages']:
         latex += f"\\cvtag{{{escape_latex(skill)}}}\n"
