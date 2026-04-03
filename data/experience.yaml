@@ -10,6 +10,7 @@
     - "Fusce vel facilisis diam, ut efficitur erat."
     - "Etiam nec rhoncus lorem."
     - "Ut tristique felis id neque fermentum, vel euismod nunc porta."
+    - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
 
 - title: "Senior Software Engineer"
   company: "Anheuser-Busch Inbnev"
@@ -23,6 +24,7 @@
     - "Fusce vel facilisis diam, ut efficitur erat."
     - "Etiam nec rhoncus lorem."
     - "Ut tristique felis id neque fermentum, vel euismod nunc porta."
+    - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
 
 - title: "Business Process Enginer (Devops)"
   company: "Master Card"
@@ -49,7 +51,6 @@
   end_date: "10/2018"
   tags: ["devops", "cloud", "development"]
   achievements:
-    - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
 
 - title: "Software Consultant (Warehouse)"
   company: "Manhattan Associates"
@@ -58,4 +59,3 @@
   end_date: "12/2016"
   tags: ["devops", "cloud", "development"]
   achievements:
-    - "Proin quis magna tincidunt, consequat nisi non, varius nunc."
