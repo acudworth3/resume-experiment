@@ -7,38 +7,53 @@
 - [ ] Read -> 📖 All files
 - [ ] Task -> 🗒️ setup treesitter for LaTeX
 
+### Publishing
+
+- [ ] Task -> 🗒️ host cvs with github pages
+- [ ] Task -> 🗒️ rewrite readme
+- [ ] Task -> 🗒️ share to
+
+- [ ] Learn -> ❔see if you can generate word docs
+
 ### Resume
 
-- [ ] Task -> 🗒️ update experience.yaml
-- [ ] Task -> 🗒️ update strength.yaml
-- [ ] Learn -> ❔ learn the basics
-- [ ] Task -> 🗒️ bring in an overleaf resume and adapt it
+- [ ] Task -> 🗒️ bring in an overleaf template and adapt it
 
 #### Extending this
 
 - [ ] Task -> 🗒️ how to include meta data
-
 - [ ] Task -> 🗒️ extend the make file
-- [ ] Task -> 🗒️ host cvs with github pages
 
-- `generate.py` is where you would add templates
+### LaTeX Katas
+
+- [ ] Adjust font size of a section
+- [ ] Adjust Column Ratio
+- [ ] Replace Icons
+- [ ] Move Location/Date alignment (left/right align)
+
+- [ ] add languages section
+- [ ] Insert Charts into Template
+- [ ] Insert Images
 
 ### Files Parsing
 
-- [ ] Learn -> ❔ understand the tempaltes
 - [ ] Read -> 📖 https://github.com/acudworth3/resume-experiment/blob/main/docs/CONTENT_GUIDE.md
 
 ## AI Integration
 
 - [ ] Task -> 🗒️ develop strategy
 
-## Issues + Updates
+### Strategy
 
-- need to call `make ats-all` to get ATS locally
-- to run locally also requires `sudo apt install texlive-fonts-extra texlive-full`
+- [ ] Task -> 🗒️ write a generator agent
+- [ ] Task -> 🗒️ generator agent - guard rails
 
 # Completed
 
+- [x] Learn -> ❔ understand the tempaltes
+- [x] Task -> 🗒️ update experience.yaml
+- [x] Task -> 🗒️ update strength.yaml
+- [x] Learn -> ❔ learn the basics
 - [x] Read -> 📖 Readme.md
 - [x] Read -> 📖 watch video again https://www.youtube.com/watch?v=S2gpOr-mbf4
 - [x] Task -> 🗒️ run it locally

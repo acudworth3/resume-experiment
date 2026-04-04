@@ -42,3 +42,8 @@ pdfinfo your_cv.pdf | grep "Pages:" | awk '{print $2}'
 ### pdflatex
 
 ### pdftotext
+
+## Issues + Updates
+
+- need to call `make ats-all` to get ATS locally
+- to run locally also requires `sudo apt install texlive-fonts-extra texlive-full`
