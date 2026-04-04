@@ -181,6 +181,69 @@ def check_personal_info(data: Dict, pdf_text: str, variant: str) -> List[str]:
 
     return issues
 
+def validate_section_titles_structure(data: Dict) -> List[str]:
+    """Validate that section_titles.yaml has correct structure for all variants.
+    
+    Returns list of validation issues (empty if valid).
+    """
+    issues = []
+    required_variants = ['software-developer', 'devops-engineer', 'cloud-engineer']
+    required_columns = ['column_1_row_0', 'column_1_row_1', 'column_2_row_0',
+                       'column_2_row_1', 'column_2_row_2', 'column_3_row_3']
+    
+    if 'section_titles' not in data:
+        issues.append("section_titles.yaml not found in data")
+        return issues
+    
+    section_titles = data['section_titles']
+    
+    # Check all required variants exist
+    for variant in required_variants:
+        if variant not in section_titles:
+            issues.append(f"Missing variant in section_titles: {variant}")
+            continue
+        
+        # Check all required columns exist for this variant
+        variant_titles = section_titles[variant]
+        if not isinstance(variant_titles, dict):
+            issues.append(f"section_titles[{variant}] is not a dictionary")
+            continue
+        
+        for column in required_columns:
+            if column not in variant_titles:
+                issues.append(f"Missing column in section_titles[{variant}]: {column}")
+            elif not isinstance(variant_titles[column], str) or not variant_titles[column].strip():
+                issues.append(f"Invalid section title for {variant}/{column}: must be non-empty string")
+    
+    return issues
+
+def check_section_titles(data: Dict, pdf_text: str, variant: str) -> List[str]:
+    """Check that all section titles for a variant are present in the PDF."""
+    issues = []
+    pdf_normalized = normalize_text(pdf_text)
+    
+    if 'section_titles' not in data:
+        issues.append("section_titles data not available")
+        return issues
+    
+    if variant not in data['section_titles']:
+        issues.append(f"No section titles defined for variant: {variant}")
+        return issues
+    
+    section_titles = data['section_titles'][variant]
+    
+    # Check each section title appears in the PDF
+    for column, title in section_titles.items():
+        if not isinstance(title, str) or not title.strip():
+            issues.append(f"Empty or invalid section title for {column}")
+            continue
+        
+        title_normalized = normalize_text(title)
+        if title_normalized not in pdf_normalized:
+            issues.append(f"Missing section title '{title}' (column {column})")
+    
+    return issues
+
 def check_strengths(data: Dict, pdf_text: str, variant: str) -> List[str]:
     """Check that strengths/core competencies are present."""
     issues = []
@@ -240,6 +303,17 @@ def test_variant(variant: str, data_dir: Path, output_dir: Path) -> tuple:
     if page_count > 1:
         warnings.append(f"⚠️  PDF has {page_count} pages (expected 1-page layout)")
 
+    # Validate section_titles structure (only once, use first variant to check all)
+    if variant == 'software-developer':
+        print("\n🔍 Validating section_titles.yaml structure...")
+        structure_issues = validate_section_titles_structure(data)
+        if structure_issues:
+            for issue in structure_issues:
+                print(f"  ⚠️  {issue}")
+                all_issues.append(issue)
+        else:
+            print("  ✅ section_titles.yaml structure valid")
+
     print("\n📋 Checking personal information...")
     issues = check_personal_info(data, pdf_text, variant)
     all_issues.extend(issues)
@@ -248,6 +322,15 @@ def test_variant(variant: str, data_dir: Path, output_dir: Path) -> tuple:
             print(f"  ❌ {issue}")
     else:
         print("  ✅ All personal info present")
+
+    print("\n📑 Checking section titles...")
+    issues = check_section_titles(data, pdf_text, variant)
+    all_issues.extend(issues)
+    if issues:
+        for issue in issues:
+            print(f"  ❌ {issue}")
+    else:
+        print("  ✅ All section titles present")
 
     print("\n💼 Checking experience...")
     issues = check_experience(data, pdf_text, variant)
