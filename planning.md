@@ -21,14 +21,15 @@
 
 - [ ] Task -> 🗒️ clean up publish workflow - Rename things
 - [ ] Task -> 🗒️ clean up publish workflow - limit branch deployments
+- [ ] Task -> 🗒️ Add a publish command to the makefile
 
 ### Resume
 
+- [ ] Task -> 🗒️ how to include meta data
 - [ ] Task -> 🗒️ bring in an overleaf template and adapt it
 
 #### Extending this
 
-- [ ] Task -> 🗒️ how to include meta data
 - [ ] Task -> 🗒️ extend the make file
 
 ### LaTeX Katas
