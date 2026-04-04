@@ -8,8 +8,8 @@ ATS_OUTPUT_DIR = output/ats
 PYTHON = python3
 
 # Keep tex files
-.PRECIOUS: $(OUTPUT_DIR)/%.tex
-.SECONDARY: $(foreach v,$(VARIANTS),$(OUTPUT_DIR)/$(v).tex)
+# .PRECIOUS: $(OUTPUT_DIR)/%.tex
+# .SECONDARY: $(foreach v,$(VARIANTS),$(OUTPUT_DIR)/$(v).tex)
 
 all: $(foreach v,$(VARIANTS),$(OUTPUT_DIR)/$(v).pdf) test
 
