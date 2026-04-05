@@ -19,7 +19,7 @@
 - [x] Task -> 🗒️ host cvs with github pages
 - [ ] Task -> 🗒️ Add custom domain
 
-- [ ] Task -> 🗒️ clean up publish workflow - Rename things
+- [x] Task -> 🗒️ clean up publish workflow - Rename things
 - [ ] Task -> 🗒️ clean up publish workflow - limit branch deployments
 - [ ] Task -> 🗒️ Add a publish command to the makefile
 

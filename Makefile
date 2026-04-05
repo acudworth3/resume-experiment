@@ -1,4 +1,4 @@
-.PHONY: all clean help test publish software-developer devops-engineer cloud-engineer ats ats-all
+.PHONY: all clean help test publish build software-developer devops-engineer cloud-engineer ats ats-all
 
 VARIANTS = software-developer devops-engineer cloud-engineer
 DATA_DIR = data
@@ -23,12 +23,13 @@ help:
 	@echo "  cloud-engineer       - Build Cloud Engineer CV"
 	@echo "  ats-all              - Generate all ATS-friendly text versions"
 	@echo "  test                 - Verify all YAML data is rendered in PDFs"
+	@echo "  build                - Publish PDFs to publish/ with index.html files"
 	@echo "  publish              - Publish resumes via GitHub workflow"
 	@echo "  clean                - Remove all generated files"
 	@echo "  help                 - Show this help message"
 	@echo ""
 	@echo "Build pipeline:"
-	@echo "  PDF:  YAML -> Python -> .tex -> pdflatex -> .pdf -> test"
+	@echo "  PDF:  YAML -> Python -> .tex -> pdflatex -> .pdf -> test -> build"
 	@echo "  ATS:  YAML -> Python -> .txt (plain text, ATS-optimized)"
 
 # Generate .tex from YAML - direct conversion, no templates
@@ -84,6 +85,12 @@ ats-all: $(foreach v,$(VARIANTS),$(ATS_OUTPUT_DIR)/$(v).txt)
 	@echo ""
 	@echo "Generated files:"
 	@ls -lh $(ATS_OUTPUT_DIR)/*.txt
+
+# Build and publish to publish/ directory
+build:
+	@echo "==> Publishing CVs to publish/ directory..."
+	$(PYTHON) scripts/build.py
+	@echo ""
 
 # Publish resumes via GitHub workflow
 publish:
