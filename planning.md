@@ -16,9 +16,9 @@
 
 - [ ] Task -> 🗒️ credit cloud native
 - [ ] Task -> 🗒️ update diagram https://github.com/acudworth3/atc-hosted-resumes/blob/chore/rewrite-readme/README.md#how-it-works
-- [ ] Task -> 🗒️ update requirenments
-- [ ] Task -> 🗒️ add section title note
-- [ ] Task -> 🗒️ slash and burn
+- [x] Task -> 🗒️ update requirenments
+- [x] Task -> 🗒️ add section title note
+- [x] Task -> 🗒️ slash and burn
 
 ### Resume
 

@@ -18,7 +18,6 @@ graph LR
     E --> F[Publish and Share]
 
     style B fill:#4a3a4a,stroke:#e599f7,stroke-width:2px
-    style E fill:#3a4a3a,stroke:#94d82d,stroke-width:2px
     style F fill:#3a4a3a,stroke:#94d82d,stroke-width:2px
 ```
 
@@ -191,6 +190,7 @@ sequenceDiagram
     participant LaTeX as LaTeX Compiler
     participant PDF as PDF Output
     participant Test as Test Suite
+    participant Build as Build
 
     YAML->>Python: Load data files
     Python->>Python: Validate & escape
@@ -198,6 +198,7 @@ sequenceDiagram
     LaTeX->>PDF: Compile PDFs
     PDF->>Test: Validate completeness
     Test->>Test: All data present?
+    Test->>Build: Move pdfs to publihs folder
 ```
 
 **Key Steps:**
