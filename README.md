@@ -142,6 +142,7 @@ ls output/ats/*.txt
 ```
 
 </details>
+
 ## How It Works
 
 ```mermaid
