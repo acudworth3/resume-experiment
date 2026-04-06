@@ -2,7 +2,7 @@
 
 Automated CV generation pipeline with publishing to github pages. Local generation combined with intional hosting.
 
-**The AI Trap**: Most people use AI wrong for CVs
+**The AI Trap**: Most people try to generate a whole resume from a job description
 
 ```mermaid
 %%{init: {"theme": "dark", "themeVariables": {"darkMode": true, "background": "#2b2b2b", "mainBkg": "#3a3a3a", "secondBkg": "#4a4a4a"}}}%%
@@ -23,10 +23,8 @@ graph LR
 ## Approach
 
 1. AI writes structured data (YAML facts)
-
-- Job Description is parsed and understood
-- Agent files control the language emphasis with guardrails from samples
-
+   1.1 Job Description is parsed and understood
+   1.2 Agent files control the language emphasis with guardrails from samples
 2. Pipelines generate variants
 3. Job Specific CVs can be created quickly
 4. Generic resumes can be hosted intentionally via `publish.yaml`
