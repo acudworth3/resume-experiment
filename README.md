@@ -52,11 +52,13 @@ vim data/skills.yaml data/education.yaml data/certifications.yaml data/strengths
 
 - Generate 3 CV variants
 - Run tests to verify all data is included
-- Place them in the `./output/generated/` folder
+- Resume are in the `./output/generated/` folder
 
 ### Publish (Optional)
 
 `make build && make publish`
+
+- Resume are moved to `./publish` folder
 
 ## Data Structure
 
