@@ -100,7 +100,7 @@ Work experience with tags for filtering:
 - `education.yaml` - Degrees and institutions
 - `certifications.yaml` - Professional certifications with tags
 - `strengths.yaml` - Key strengths with descriptions and tags
-- `section_titles.yaml` - Rename Sections in the resume
+- `section_titles.yaml` - Rename sections in the resume
 
 ## Testing Locally
 
@@ -142,19 +142,6 @@ ls output/ats/*.txt
 ```
 
 </details>
-
-## Requirements
-
-- Python 3.11+
-- TeX Live (pdflatex)
-
-- texlive-full
-- texlive-latex-extra
-- texlive-fonts-extra
-- poppler-utils (pdftotext, pdfinfo)
-
-- gh (optional for publishing from local)
-
 ## How It Works
 
 ```mermaid
@@ -188,36 +175,17 @@ sequenceDiagram
 6. `build.py` copies all generated pdf so `./publish`
 7. `make publish` triggers workflow to host resumes on github pages
 
-## Troubleshooting
+## Requirements
 
-### PDFs not generating locally?
+- Python 3.11+
+- TeX Live (pdflatex)
 
-Check dependencies:
+- texlive-full
+- texlive-latex-extra
+- texlive-fonts-extra
+- poppler-utils (pdftotext, pdfinfo)
 
-```bash
-# Python packages
-pip list | grep PyYAML
-
-# LaTeX
-pdflatex --version
-
-# PDF utilities
-pdftotext -v
-```
-
-### Tests failing?
-
-Run verbose test output:
-
-```bash
-python scripts/test_data_completeness.py
-```
-
-Common issues:
-
-- Missing data in YAML files
-- Special characters in LaTeX (use `\&` for `&`, `\%` for `%`)
-- Tags not matching template filters
+- gh (optional for publishing from local)
 
 ## License
 

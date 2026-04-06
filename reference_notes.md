@@ -82,3 +82,34 @@ Edit templates in `templates/*/template.tex.j2` - each uses AltaCV LaTeX class w
 - **Cloud Engineer**: Steel Blue (#4682B4) - Trust, reliability, professionalism
 
 - [ ] Task -> 🗒️ rewrite this
+
+## Troubleshooting
+
+### PDFs not generating locally?
+
+Check dependencies:
+
+```bash
+# Python packages
+pip list | grep PyYAML
+
+# LaTeX
+pdflatex --version
+
+# PDF utilities
+pdftotext -v
+```
+
+### Tests failing?
+
+Run verbose test output:
+
+```bash
+python scripts/test_data_completeness.py
+```
+
+Common issues:
+
+- Missing data in YAML files
+- Special characters in LaTeX (use `\&` for `&`, `\%` for `%`)
+- Tags not matching template filters
