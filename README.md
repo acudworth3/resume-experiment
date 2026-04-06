@@ -23,8 +23,8 @@ graph LR
 ## Approach
 
 1. AI writes structured data (YAML facts)
-   1.1 Job Description is parsed and understood
-   1.2 Agent files control the language emphasis with guardrails from samples
+   - 1.1 Job Description is parsed and understood
+   - 1.2 Agent files control the language emphasis with guardrails from samples
 2. Pipelines generate variants
 3. Job Specific CVs can be created quickly
 4. Generic resumes can be hosted intentionally via `publish.yaml`
