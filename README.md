@@ -191,6 +191,7 @@ sequenceDiagram
     participant PDF as PDF Output
     participant Test as Test Suite
     participant Build as Build
+    participant Publish as Publish
 
     YAML->>Python: Load data files
     Python->>Python: Validate & escape
@@ -198,7 +199,8 @@ sequenceDiagram
     LaTeX->>PDF: Compile PDFs
     PDF->>Test: Validate completeness
     Test->>Test: All data present?
-    Test->>Build: Move pdfs to publihs folder
+    Test->>Build: Copy to publish folder
+    Build->>Publish: Deploy to GH Pages
 ```
 
 **Key Steps:**
