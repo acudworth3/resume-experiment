@@ -95,13 +95,6 @@ Work experience with tags for filtering:
     - "Improved deployment efficiency by 60%"
 ```
 
-**Tag guide**:
-
-- `development` - Appears in Software Developer CV
-- `devops` - Appears in DevOps Engineer CV
-- `cloud` - Appears in Cloud Engineer CV
-- Mix tags to appear in multiple variants
-
 ### Other files
 
 - `skills.yaml` - Programming languages, tools, cloud platforms
