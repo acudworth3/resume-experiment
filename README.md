@@ -1,6 +1,9 @@
 # Overview
 
-Automated CV generation pipeline that creates multiple psychologically-optimized CV variants from YAML data.
+Automated CV generation pipeline with publishing to github pages. Local generation combined with intional hosting.
+
+> [!NOTE]
+> Full credit [Piotr1215](https://github.com/Piotr1215) for most of what is in this repo. For more information on what should go into resumes, review his [template](https://github.com/Piotr1215/cv-pipeline-template) and explanation video. Additionally, he has an excellent [YouTube Channel](https://www.youtube.com/@cloud-native-corner) with a walk through of usage and many other useful topics.
 
 ## Why This Approach?
 
@@ -22,10 +25,11 @@ graph LR
 **The Right Approach:**
 
 - AI writes structured data (YAML facts)
-- YOU control the pipeline and output
-- Consistent quality across all variants
-- Version controlled career narrative
-- Update once → all CVs updated automatically
+  - Job Description is parsed and understood
+  - Agent files control the language emphasis with guardrails from samples
+- Pipelines generate variants
+- Job Specific CVs can be created quickly
+- Generic resumes can be hosted intentionally via `publish.yaml`
 
 - [ ] Task -> 🗒️ restructure headers
 
